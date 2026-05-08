@@ -11,26 +11,22 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.4",
-<<<<<<< HEAD
-    "axios": "^1.16.0",
+    "axios": "^1.10.0",
     "framer-motion": "^12.38.0",
-    "lucide-react": "^1.14.0",
-=======
-    "framer-motion": "^12.38.0",
->>>>>>> 7bda1371ff02a93961a5d5515ef2d0999d746317
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
+    "lucide-react": "^0.514.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@types/react": "^19.2.14",
+    "@types/react": "^19.2.3",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "eslint": "^10.2.1",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.5.0",
-    "vite": "^8.0.10"
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "vite": "^7.0.0"
   }
 }
