@@ -1,47 +1,143 @@
-/* TOP BUTTONS */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#000;
+  color:white;
+}
+
+.app{
+  min-height:100vh;
+  background:black;
+  padding:30px 15px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.hero{
+  width:100%;
+  max-width:520px;
+  text-align:center;
+}
+
+.logo{
+  width:95px;
+  height:95px;
+  margin:auto;
+  border-radius:28px;
+  background:linear-gradient(135deg,#7b2ff7,#c084fc);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:45px;
+  box-shadow:0 0 35px #7b2ff7;
+  animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+  from{
+    box-shadow:0 0 15px #7b2ff7;
+  }
+
+  to{
+    box-shadow:0 0 40px #c084fc;
+  }
+
+}
+
+.welcome{
+  margin-top:25px;
+  font-size:24px;
+  color:#d8b4fe;
+  font-weight:700;
+  animation:fadeUp 1s ease;
+}
+
+.title{
+  font-size:68px;
+  font-weight:900;
+  margin-top:8px;
+  background: linear-gradient(to right, #9333ea, #ffffff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:titleAnimation 1s ease;
+  min-height:85px;
+}
+
+@keyframes titleAnimation{
+
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0px);
+  }
+
+}
+
+.subtitle{
+  margin-top:10px;
+  color:#d4d4d4;
+  font-size:20px;
+  animation:fadeUp 1.3s ease;
+}
+
+.line{
+  width:150px;
+  height:5px;
+  background:#9333ea;
+  margin:28px auto;
+  border-radius:10px;
+  box-shadow:0 0 20px #9333ea;
+}
+
+.help-title{
+  font-size:42px;
+  font-weight:800;
+  color:white;
+  margin-bottom:35px;
+  animation:fadeUp 1.5s ease;
+}
 
 .top-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:20px;
+  gap:15px;
 }
 
 .top-btn{
   background:#101010;
   border:1px solid #2f2f2f;
   color:white;
-  padding:14px 16px;
-  border-radius:18px;
-  font-size:15px;
+  padding:18px;
+  border-radius:20px;
+  font-size:17px;
   font-weight:600;
   cursor:pointer;
   transition:0.3s;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-
-  height:58px;
-  text-align:center;
 }
 
 .top-btn:hover{
   border:1px solid #9333ea;
-  transform:translateY(-2px);
-  box-shadow:0 0 14px #9333ea;
+  transform:scale(1.03);
+  box-shadow:0 0 18px #9333ea;
 }
-
-/* SLIDER QUESTIONS */
 
 .slider-questions{
   display:flex;
-  align-items:center;
-  gap:10px;
+  gap:12px;
   overflow-x:auto;
-  margin-top:24px;
-  padding:5px 2px 12px;
+  margin-top:30px;
+  padding-bottom:10px;
   scrollbar-width:none;
 }
 
@@ -51,24 +147,104 @@
 
 .slide-btn{
   min-width:max-content;
-  padding:10px 16px;
+  padding:14px 22px;
   border:none;
-  border-radius:14px;
+  border-radius:18px;
   background:#151515;
   color:white;
   border:1px solid #2d2d2d;
-  font-size:13px;
-  font-weight:500;
+  font-size:14px;
   cursor:pointer;
   transition:0.3s;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  white-space:nowrap;
 }
 
 .slide-btn:hover{
   background:#9333ea;
-  border-color:#9333ea;
+}
+
+.chat-box{
+  width:100%;
+  max-width:520px;
+  margin-top:40px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.bot-msg,
+.user-msg{
+  padding:18px;
+  border-radius:20px;
+  line-height:1.6;
+  font-size:16px;
+  white-space:pre-line;
+}
+
+.bot-msg{
+  background:#111;
+  border:1px solid #2f2f2f;
+}
+
+.user-msg{
+  background:#7b2ff7;
+  align-self:flex-end;
+}
+
+.input-area{
+  width:100%;
+  max-width:520px;
+  display:flex;
+  gap:12px;
+  margin-top:25px;
+}
+
+.input-area input{
+  flex:1;
+  background:#111;
+  border:1px solid #2f2f2f;
+  padding:18px;
+  border-radius:18px;
+  color:white;
+  font-size:16px;
+  outline:none;
+}
+
+.input-area input::placeholder{
+  color:#888;
+}
+
+.input-area button{
+  background:white;
+  color:black;
+  border:none;
+  padding:18px 25px;
+  border-radius:18px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0px);
+  }
+
+}
+
+@media(max-width:600px){
+
+  .title{
+    font-size:52px;
+  }
+
+  .help-title{
+    font-size:32px;
+  }
+
 }

@@ -3,31 +3,25 @@ import "./App.css";
 
 export default function App() {
 
-  // ANIMATION TEXT
   const fullText = "IAT Academy";
   const [animatedText, setAnimatedText] = useState("");
 
   useEffect(() => {
-
     let index = 0;
 
     const interval = setInterval(() => {
-
       setAnimatedText(fullText.slice(0, index + 1));
 
       index++;
 
-      if(index === fullText.length){
+      if (index === fullText.length) {
         clearInterval(interval);
       }
-
     }, 120);
 
     return () => clearInterval(interval);
-
   }, []);
 
-  // CHAT STATE
   const [messages, setMessages] = useState([
     {
       sender: "bot",
@@ -38,7 +32,6 @@ export default function App() {
 
   const [input, setInput] = useState("");
 
-  // QUESTIONS
   const questions = [
     "About IAT Networks",
     "AI Solutions",
@@ -58,9 +51,7 @@ export default function App() {
     "Client Support"
   ];
 
-  // REPLIES
   const replies = {
-
     services:
       "IAT Networks provides Recruitment, BPO, AI Solutions, Digital Marketing and IT Consulting services.",
 
@@ -116,133 +107,132 @@ export default function App() {
       "Career opportunities are available for software, recruitment and marketing roles.",
 
     why:
-      "✔ Modern Technology\n✔ AI Solutions\n✔ Recruitment Support\n✔ Internship Opportunities\n✔ Professional Team",
+      "✔️ Modern Technology\n✔️ AI Solutions\n✔️ Recruitment Support\n✔️ Internship Opportunities\n✔️ Professional Team",
 
     support:
       "Customer and recruitment support are available through phone, email and WhatsApp."
   };
 
-  // SEND MESSAGE
   const sendMessage = (customText) => {
 
     const userText = customText || input;
 
-    if(!userText.trim()) return;
+    if (!userText.trim()) return;
 
     let botReply =
       "Please ask IAT Networks related questions.";
 
     const lower = userText.toLowerCase();
 
-    if(lower.includes("service")){
+    if (lower.includes("service")) {
       botReply = replies.services;
     }
 
-    else if(
+    else if (
       lower.includes("job") ||
       lower.includes("apply") ||
       lower.includes("resume")
-    ){
+    ) {
       botReply = replies.jobs;
     }
 
-    else if(lower.includes("rpo")){
+    else if (lower.includes("rpo")) {
       botReply = replies.rpo;
     }
 
-    else if(
+    else if (
       lower.includes("contact") ||
       lower.includes("phone") ||
       lower.includes("mail")
-    ){
+    ) {
       botReply = replies.contact;
     }
 
-    else if(lower.includes("about")){
+    else if (lower.includes("about")) {
       botReply = replies.about;
     }
 
-    else if(lower.includes("ai")){
+    else if (lower.includes("ai")) {
       botReply = replies.ai;
     }
 
-    else if(
+    else if (
       lower.includes("marketing") ||
       lower.includes("digital")
-    ){
+    ) {
       botReply = replies.marketing;
     }
 
-    else if(
+    else if (
       lower.includes("recruitment") ||
       lower.includes("hiring")
-    ){
+    ) {
       botReply = replies.recruitment;
     }
 
-    else if(
+    else if (
       lower.includes("location") ||
       lower.includes("address")
-    ){
+    ) {
       botReply = replies.location;
     }
 
-    else if(
+    else if (
       lower.includes("working") ||
       lower.includes("hours")
-    ){
+    ) {
       botReply = replies.hours;
     }
 
-    else if(lower.includes("internship")){
+    else if (lower.includes("internship")) {
       botReply = replies.internship;
     }
 
-    else if(lower.includes("training")){
+    else if (lower.includes("training")) {
       botReply = replies.training;
     }
 
-    else if(lower.includes("course")){
+    else if (lower.includes("course")) {
       botReply = replies.courses;
     }
 
-    else if(lower.includes("hr")){
+    else if (lower.includes("hr")) {
       botReply = replies.email;
     }
 
-    else if(lower.includes("whatsapp")){
+    else if (lower.includes("whatsapp")) {
       botReply = replies.whatsapp;
     }
 
-    else if(
+    else if (
       lower.includes("consulting") ||
       lower.includes("it")
-    ){
+    ) {
       botReply = replies.consulting;
     }
 
-    else if(lower.includes("bpo")){
+    else if (lower.includes("bpo")) {
       botReply = replies.bpo;
     }
 
-    else if(
+    else if (
       lower.includes("career") ||
       lower.includes("opportunity")
-    ){
+    ) {
       botReply = replies.career;
     }
 
-    else if(
+    else if (
       lower.includes("why") ||
       lower.includes("choose")
-    ){
+    ) {
       botReply = replies.why;
     }
 
-    else if(
+    else if (
       lower.includes("support") ||
       lower.includes("client")
-    ){
+    ) {
       botReply = replies.support;
     }
 
@@ -265,8 +255,6 @@ export default function App() {
   return (
 
     <div className="app">
-
-      {/* HERO */}
 
       <div className="hero">
 
@@ -291,8 +279,6 @@ export default function App() {
         <h2 className="help-title">
           What can I help with?
         </h2>
-
-        {/* TOP BUTTONS */}
 
         <div className="top-grid">
 
@@ -334,8 +320,6 @@ export default function App() {
 
         </div>
 
-        {/* SLIDER QUESTIONS */}
-
         <div className="slider-questions">
 
           {questions.map((q, index) => (
@@ -353,8 +337,6 @@ export default function App() {
         </div>
 
       </div>
-
-      {/* CHAT */}
 
       <div className="chat-box">
 
@@ -374,8 +356,6 @@ export default function App() {
         ))}
 
       </div>
-
-      {/* INPUT */}
 
       <div className="input-area">
 
@@ -398,5 +378,4 @@ export default function App() {
     </div>
 
   );
-
 }
