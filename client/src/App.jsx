@@ -3,7 +3,7 @@ import "./App.css";
 
 export default function App() {
 
-  const fullText = "IAT Academy";
+  const fullText = "IAT Networks";
   const [animatedText, setAnimatedText] = useState("");
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function App() {
     {
       sender: "bot",
       text:
-        "👋 Welcome to IAT Academy.\nAsk me about services, recruitment, AI solutions, careers and contact details."
+        "👋 Welcome to IAT Networks.\nAsk me about services, recruitment, AI solutions, careers and contact details."
     }
   ]);
 
@@ -271,7 +271,7 @@ export default function App() {
         </h1>
 
         <p className="subtitle">
-          I am chatbot of IAT Academy
+          I am chatbot of IAT Networks
         </p>
 
         <div className="line"></div>
